@@ -1,6 +1,6 @@
 # DIO - Java Collection
 
-<img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/03/hierarchy-of-collection-framework-in-java.webp" width="650" height="350" align="center">
+<img src="hierarchy-of-collection-framework-in-java.webp" width="650" height="350" align="center">
 <div style="text-align:center;">
     <a href="https://data-flair.training/blogs/collection-framework-in-java/#google_vignette">Hierarchy of Collection Framework in Java</a>
 </div>

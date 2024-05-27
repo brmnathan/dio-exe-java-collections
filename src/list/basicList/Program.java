@@ -7,18 +7,23 @@ public class Program {
         Product book = new Product("The Lord of The Rings", 3, 120.0);
         Product bike = new Product("BMX", 1, 1600.0);
 
-        ShoppingCart shoppingCart = new ShoppingCart();
+        try {
+            ShoppingCart shoppingCart = new ShoppingCart();
 
-        //Add Products
-        shoppingCart.addProduct(tv);
-        shoppingCart.addProduct(iPhone);
-        shoppingCart.addProduct(book);
-        shoppingCart.addProduct(bike);
-        //Remove Product by name
-        shoppingCart.removeProduct("BMX");
-        //Display Products in the Cart
-        shoppingCart.displayProducts();
-        //Display Total Cart Value
-        System.out.println(shoppingCart.calculateCartValue());
+            //Add Products
+            shoppingCart.addProduct(tv);
+            shoppingCart.addProduct(iPhone);
+            shoppingCart.addProduct(book);
+            shoppingCart.addProduct(bike);
+            //Remove Product by name
+            shoppingCart.removeProduct("BMX");
+            //Display Products in the Cart
+            shoppingCart.displayProducts();
+            //Display Total Cart Value
+            System.out.println(shoppingCart.calculateCartValue());
+        }
+        catch (ShoppingException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

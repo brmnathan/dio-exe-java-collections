@@ -16,38 +16,43 @@ public class Program {
         Book book9 = new Book("1984", 1949, "George Orwell");
         Book book10 = new Book("Coraline", 2002, "Neil Gaiman");
 
-        BookCatalog bookCatalog = new BookCatalog();
+        try {
+            BookCatalog bookCatalog = new BookCatalog();
 
-        //Add Books to Catalog
-        bookCatalog.addBook(book1);
-        bookCatalog.addBook(book2);
-        bookCatalog.addBook(book3);
-        bookCatalog.addBook(book4);
-        bookCatalog.addBook(book5);
-        bookCatalog.addBook(book6);
-        bookCatalog.addBook(book7);
-        bookCatalog.addBook(book8);
-        bookCatalog.addBook(book9);
-        bookCatalog.addBook(book10);
+            //Add Books to Catalog
+            bookCatalog.addBook(book1);
+            bookCatalog.addBook(book2);
+            bookCatalog.addBook(book3);
+            bookCatalog.addBook(book4);
+            bookCatalog.addBook(book5);
+            bookCatalog.addBook(book6);
+            bookCatalog.addBook(book7);
+            bookCatalog.addBook(book8);
+            bookCatalog.addBook(book9);
+            bookCatalog.addBook(book10);
 
-        //Search by Author
-        String author = "J.R.R. Tolkien";
-        List<Book> booksByAuthor = bookCatalog.searchByAuthor(author);
-        System.out.println("Books by: " + author);
-        for (Book b : booksByAuthor)
-            System.out.println(b);
+            //Search by Author
+            String author = "J.R.R. Tolkien";
+            List<Book> booksByAuthor = bookCatalog.searchByAuthor(author);
+            System.out.println("Books by: " + author);
+            for (Book b : booksByAuthor)
+                System.out.println(b);
 
-        //Search by YearInterval
-        int initialYear = 1990;
-        int finalYear = 2010;
-        List<Book> booksByYearInterval = bookCatalog.searchByYearInterval(initialYear, finalYear);
-        System.out.println("Books from " + initialYear + " to " + finalYear);
-        for (Book b : booksByYearInterval)
-            System.out.println(b);
+            //Search by YearInterval
+            int initialYear = 1990;
+            int finalYear = 2010;
+            List<Book> booksByYearInterval = bookCatalog.searchByYearInterval(initialYear, finalYear);
+            System.out.println("Books from " + initialYear + " to " + finalYear);
+            for (Book b : booksByYearInterval)
+                System.out.println(b);
 
-        //Search by Title
-        String title = "Dune";
-        System.out.println("Book matching the title: " + title);
-        System.out.println(bookCatalog.searchByTitle(title));
+            //Search by Title
+            String title = "Dune";
+            System.out.println("Book matching the title: " + title);
+            System.out.println(bookCatalog.searchByTitle(title));
+        }
+        catch (BookCatalogException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

@@ -1,5 +1,7 @@
 package map.searchMap;
 
+import list.basicList.ShoppingException;
+
 public class Program {
     public static void main(String[] args) {
         Product p1 = new Product("Smartphone", 799.99, 15);
@@ -13,28 +15,33 @@ public class Program {
         Product p9 = new Product("Camera", 599.99, 9);
         Product p10 = new Product("Printer", 299.99, 6);
 
-        Stock stock = new Stock();
+        try {
+            Stock stock = new Stock();
 
-        //Add products
-        stock.addProduct(93847637L, p1);
-        stock.addProduct(85746395L, p2);
-        stock.addProduct(97463547L, p3);
-        stock.addProduct(75847465L, p4);
-        stock.addProduct(89657463L, p5);
-        stock.addProduct(23459876L, p6);
-        stock.addProduct(45362738L, p7);
-        stock.addProduct(23443256L, p8);
-        stock.addProduct(32166754L, p9);
-        stock.addProduct(76213348L, p10);
-        //Remove product
-        stock.removeProduct(76213348L);
-        //Display products
-        stock.displayStock();
-        //Display the cheapest product
-        System.out.println(stock.getCheapestProduct());
-        //Display the most expensive product
-        System.out.println(stock.getMostExpensiveProduct());
-        //Stock total value
-        System.out.println("Stock total value: " + stock.getStockTotalValue());
+            //Add products
+            stock.addProduct(93847637L, p1);
+            stock.addProduct(85746395L, p2);
+            stock.addProduct(97463547L, p3);
+            stock.addProduct(75847465L, p4);
+            stock.addProduct(89657463L, p5);
+            stock.addProduct(23459876L, p6);
+            stock.addProduct(45362738L, p7);
+            stock.addProduct(23443256L, p8);
+            stock.addProduct(32166754L, p9);
+            stock.addProduct(76213348L, p10);
+            //Remove product
+            stock.removeProduct(76213348L);
+            //Display products
+            stock.displayStock();
+            //Display the cheapest product
+            System.out.println(stock.getCheapestProduct());
+            //Display the most expensive product
+            System.out.println(stock.getMostExpensiveProduct());
+            //Stock total value
+            System.out.println("Stock total value: " + stock.getStockTotalValue());
+        }
+        catch (ShoppingException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

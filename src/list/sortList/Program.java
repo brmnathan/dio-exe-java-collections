@@ -13,25 +13,30 @@ public class Program {
         Person p9 = new Person(40, "Jon Snow", 178.0);
         Person p10 = new Person(35, "Aragorn", 186.0);
 
-        PeopleList peopleList = new PeopleList();
+        try {
+            PeopleList peopleList = new PeopleList();
 
-        //Add person to list
-        peopleList.addPerson(p1);
-        peopleList.addPerson(p2);
-        peopleList.addPerson(p3);
-        peopleList.addPerson(p4);
-        peopleList.addPerson(p5);
-        peopleList.addPerson(p6);
-        peopleList.addPerson(p7);
-        peopleList.addPerson(p8);
-        peopleList.addPerson(p9);
-        peopleList.addPerson(p10);
+            //Add person to list
+            peopleList.addPerson(p1);
+            peopleList.addPerson(p2);
+            peopleList.addPerson(p3);
+            peopleList.addPerson(p4);
+            peopleList.addPerson(p5);
+            peopleList.addPerson(p6);
+            peopleList.addPerson(p7);
+            peopleList.addPerson(p8);
+            peopleList.addPerson(p9);
+            peopleList.addPerson(p10);
 
-        //Print original list
-        System.out.println(peopleList.getPeopleList());
-        //Print list sort by age
-        System.out.println(peopleList.sortByAge());
-        //Print list sort by height
-        System.out.println(peopleList.sortByHeight());
+            //Print original list
+            System.out.println(peopleList.getPeopleList());
+            //Print list sort by age
+            System.out.println(peopleList.sortByAge());
+            //Print list sort by height
+            System.out.println(peopleList.sortByHeight());
+        }
+        catch (PeopleListException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

@@ -26,7 +26,7 @@ public class BookStore {
             booksByPrice.put(entry.getKey(), entry.getValue());
 
         if (booksByPrice.isEmpty())
-            throw new BookStoreException("The book catalog is empty!");
+            throw new BookStoreException("Error: The book catalog is empty!");
         else
             return booksByPrice;
     }
@@ -41,7 +41,7 @@ public class BookStore {
                 booksByAuthor.put(entry.getKey(), entry.getValue());
 
         if (booksByAuthor.isEmpty())
-            throw new BookStoreException("The book catalog is empty!");
+            throw new BookStoreException("Error: There are no books from the author: " + author);
         else
             return booksByAuthor;
     }
@@ -58,7 +58,7 @@ public class BookStore {
         }
 
         if (mostExpensiveBook == null)
-            throw new BookStoreException("Book not found!");
+            throw new BookStoreException("Error: Book not found!");
         else
             return mostExpensiveBook;
     }
@@ -75,7 +75,7 @@ public class BookStore {
         }
 
         if (cheapestBook == null)
-            throw new BookStoreException("Book not found!");
+            throw new BookStoreException("Error: Book not found!");
         else
             return cheapestBook;
     }
